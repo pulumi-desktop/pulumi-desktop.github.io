@@ -1,0 +1,37 @@
+@import "@picocss/pico";
+
+:root {
+    --font-family: "Inter", sans-serif;
+    --font-size: 16px;
+}
+
+body {
+    > header,
+    > section {
+        --block-spacing-vertical: 1rem;
+    }
+}
+
+header {
+    h1 {
+        --typography-spacing-vertical: 1rem;
+    }
+
+    h1,
+    p {
+        text-align: center;
+    }
+}
+
+section {
+    h4,
+    p {
+        text-align: center;
+    }
+}
+
+footer {
+    .footnote {
+        text-align: right;
+    }
+}
