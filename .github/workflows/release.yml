@@ -1,0 +1,25 @@
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+
+            - uses: actions/setup-node@v2
+              with:
+                  node-version: "16"
+
+            - run: |
+                  npm ci
+                  npm run build
+                  git config --global author.name Praneet Loke
+                  git config --global author.email 1466314+praneetloke@users.noreply.github.com
+                  git diff
+                  git checkout release
+                  git add docs
+                  git commit -m "Build site"
+                  git push origin release
