@@ -1,4 +1,4 @@
-@import "@picocss/pico";
+@import "./theme.scss";
 
 :root {
     --font-family: "Inter", sans-serif;
@@ -13,14 +13,7 @@ body {
 }
 
 header {
-    h1 {
-        --typography-spacing-vertical: 1rem;
-    }
-
-    h1,
-    p {
-        text-align: center;
-    }
+    text-align: center;
 }
 
 section {

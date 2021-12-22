@@ -1,0 +1,26 @@
+// Pico Lib
+// --------------------
+
+// Config
+@import "@picocss/pico/scss/variables";
+
+// Theming
+@import "themes/default";
+
+// Layout
+@import "@picocss/pico/scss/layout/document"; // html
+@import "@picocss/pico/scss/layout/sectioning"; // body, header, main, footer
+@import "@picocss/pico/scss/layout/container"; // .container, .container-fluid
+@import "@picocss/pico/scss/layout/section"; // section
+@import "@picocss/pico/scss/layout/grid"; // .grid
+@import "@picocss/pico/scss/layout/scroller"; // figure
+
+// Content
+@import "@picocss/pico/scss/content/typography"; // a, headings, p, ul, blockquote, ...
+@import "@picocss/pico/scss/content/embedded"; // audio, canvas, iframe, img, svg, video
+@import "@picocss/pico/scss/content/button"; // button, a[role=button], type=button, type=submit ...
+@import "@picocss/pico/scss/content/form"; // input, select, textarea, label, fieldset, legend
+
+// Utilities
+@import "@picocss/pico/scss/utilities/accessibility"; // -ms-touch-action, aria-*
+@import "@picocss/pico/scss/utilities/reduce-motion"; // prefers-reduced-motion
