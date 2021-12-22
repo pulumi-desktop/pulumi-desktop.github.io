@@ -16,7 +16,7 @@ jobs:
 
             - uses: sterlingwes/gh-pages-deploy-action@v1.1
               with:
-                  access-token: ${{ secrets.GITHUB_TOKEN }}
+                  access-token: ${{ secrets.GH_PAT }}
                   source-directory: docs
                   deploy-branch: release
                   build-command: npm run build
