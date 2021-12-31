@@ -1,22 +1,24 @@
 name: Github Pages Publish
 
 on:
-    push:
-        branches:
-            - master
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - README.md
 
 concurrency: ci-${{ github.ref }}
 
 jobs:
-    build:
-        environment: github-pages
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
+  build:
+    environment: github-pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
 
-            - uses: sterlingwes/gh-pages-deploy-action@v1.1
-              with:
-                  access-token: ${{ secrets.GH_PAT }}
-                  source-directory: docs
-                  deploy-branch: release
-                  build-command: npm run build
+      - uses: sterlingwes/gh-pages-deploy-action@v1.1
+        with:
+          access-token: ${{ secrets.GH_PAT }}
+          source-directory: docs
+          deploy-branch: release
+          build-command: npm run build

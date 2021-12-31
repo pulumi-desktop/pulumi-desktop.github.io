@@ -1,0 +1,1 @@
+This repo is for the website. File an [issue](https://github.com/pulumi-desktop/app/issues) or join the [discussions](https://github.com/pulumi-desktop/app/discussions) in the [app](https://github.com/pulumi-desktop/app) repository.
