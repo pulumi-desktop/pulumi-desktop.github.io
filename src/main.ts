@@ -27,11 +27,9 @@ function enableDownloadButtons() {
         switch (os) {
             case "linux":
                 releaseAsset = latestRelease.assets.find((a) => a.name.includes("snap"));
-                console.log("releaseAsset for", os, releaseAsset);
                 break;
             case "darwin":
                 releaseAsset = latestRelease.assets.find((a) => a.name.includes("dmg"));
-                console.log("releaseAsset for", os, releaseAsset);
                 break;
             case "windows":
                 releaseAsset = latestRelease.assets.find((a) => a.name.includes("exe"));
