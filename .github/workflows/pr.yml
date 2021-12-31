@@ -1,0 +1,20 @@
+on:
+  pull_request:
+    paths:
+      - src/**/*
+      - test/**/*
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16.x"
+
+      - name: Restore deps and test
+        run: |
+          npm ci
+          npm test
