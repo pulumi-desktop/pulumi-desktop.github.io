@@ -14,9 +14,7 @@ interface GitHubRelease {
 let latestRelease: GitHubRelease | undefined;
 
 async function getLatestVersion() {
-    const resp = await fetch(
-        "https://api.github.com/repos/pulumi-desktop/app/releases/latest"
-    );
+    const resp = await fetch("https://api.github.com/repos/pulumi-desktop/app/releases/latest");
     latestRelease = await resp.json();
 }
 
@@ -28,21 +26,15 @@ function enableDownloadButtons() {
         let releaseAsset: ReleaseAsset | undefined;
         switch (os) {
             case "linux":
-                releaseAsset = latestRelease.assets.find((a) =>
-                    a.name.includes("snap")
-                );
+                releaseAsset = latestRelease.assets.find((a) => a.name.includes("snap"));
                 console.log("releaseAsset for", os, releaseAsset);
                 break;
             case "darwin":
-                releaseAsset = latestRelease.assets.find((a) =>
-                    a.name.includes("dmg")
-                );
+                releaseAsset = latestRelease.assets.find((a) => a.name.includes("dmg"));
                 console.log("releaseAsset for", os, releaseAsset);
                 break;
             case "windows":
-                releaseAsset = latestRelease.assets.find((a) =>
-                    a.name.includes("exe")
-                );
+                releaseAsset = latestRelease.assets.find((a) => a.name.includes("exe"));
                 break;
         }
 
@@ -58,9 +50,7 @@ if (!window.fetch) {
 } else {
     getLatestVersion()
         .then(() => enableDownloadButtons())
-        .catch((err: any) =>
-            console.error("Failed to fetch the latest version", err)
-        );
+        .catch((err: any) => console.error("Failed to fetch the latest version", err));
 }
 
 export {};
