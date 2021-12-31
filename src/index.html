@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+        <title>Pulumi Desktop</title>
         <link
             rel="preconnect"
             href="https://fonts.googleapis.com"
@@ -13,14 +14,60 @@
         <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
-            crossorigin="anonymous"
+            crossorigin
         />
 
         <link rel="stylesheet" href="./assets/styles/custom.scss" />
-        <title>Pulumi Desktop</title>
+        <script type="text/javascript" src="main.ts"></script>
     </head>
     <body>
+        <nav class="container">
+            <ul></ul>
+            <ul>
+                <li>
+                    <a
+                        href="https://github.com/pulumi-desktop/app/discussions"
+                        class="secondary"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-chat-left"
+                            viewBox="0 0 16 16"
+                        >
+                            <path
+                                d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+                            />
+                        </svg>
+                        <span>Join the discussions</span>
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class="secondary"
+                        href="https://github.com/pulumi-desktop/app"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-github"
+                            viewBox="0 0 16 16"
+                        >
+                            <path
+                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                            />
+                        </svg>
+                        <span>GitHub</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
         <header class="container">
+            <!--[if IE]><h1>Internet Explorer is not supported!</h1><![endif]-->
             <p>
                 <img
                     src="./assets/images/avatar-on-white.svg"
@@ -36,9 +83,36 @@
                 workflow.
             </p>
             <div class="grid">
-                <button disabled>Download for Linux (64bit)</button>
-                <button disabled>Download for macOS (64bit)</button>
-                <button disabled>Download for Windows (64bit)</button>
+                <a
+                    role="button"
+                    href="#"
+                    class="download-btn"
+                    disabled
+                    data-os="linux"
+                    data-arch="x64"
+                >
+                    Download for Linux (64bit)
+                </a>
+                <a
+                    role="button"
+                    href="#"
+                    class="download-btn"
+                    disabled
+                    data-os="darwin"
+                    data-arch="x64"
+                >
+                    Download for macOS (64bit)
+                </a>
+                <a
+                    role="button"
+                    href="#"
+                    class="download-btn"
+                    disabled
+                    data-os="windows"
+                    data-arch="x64"
+                >
+                    Download for Windows (64bit)
+                </a>
             </div>
         </header>
         <main class="container">
@@ -104,6 +178,80 @@
                             easily.
                         </p>
                     </div>
+                </div>
+            </section>
+            <section>
+                <div class="grid">
+                    <article>
+                        <header>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-bell-fill"
+                                viewBox="0 0 16 16"
+                            >
+                                <path
+                                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"
+                                />
+                            </svg>
+                            <span>Pulumi CLI Update Notifications</span>
+                        </header>
+                        Get notified about new versions of Pulumi CLI so you can
+                        turn off CLI update checks permanently by setting
+                        <a
+                            class="secondary"
+                            href="https://www.pulumi.com/docs/reference/cli/environment-variables/"
+                        >
+                            PULUMI_SKIP_UPDATE_CHECK
+                        </a>
+                        in your shell.
+                    </article>
+                    <article>
+                        <header>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-lamp-fill"
+                                viewBox="0 0 16 16"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M5.04.303A.5.5 0 0 1 5.5 0h5c.2 0 .38.12.46.303l3 7a.5.5 0 0 1-.363.687h-.002c-.15.03-.3.056-.45.081a32.731 32.731 0 0 1-4.645.425V13.5a.5.5 0 1 1-1 0V8.495a32.753 32.753 0 0 1-4.645-.425c-.15-.025-.3-.05-.45-.08h-.003a.5.5 0 0 1-.362-.688l3-7Z"
+                                />
+                                <path
+                                    d="M6.493 12.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.052.075l-.001.004-.004.01V14l.002.008a.147.147 0 0 0 .016.033.62.62 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.62.62 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411Z"
+                                />
+                            </svg>
+                            <span>Dark Mode Support</span>
+                        </header>
+                        Easy on your eyes day and night. Choose your preferred
+                        theme or let the app follow your system theme.
+                    </article>
+                    <article>
+                        <header>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-mouse-fill"
+                                viewBox="0 0 16 16"
+                            >
+                                <path
+                                    d="M3 5a5 5 0 0 1 10 0v6a5 5 0 0 1-10 0V5zm5.5-1.5a.5.5 0 0 0-1 0v2a.5.5 0 0 0 1 0v-2z"
+                                />
+                            </svg>
+                            <span>Tray Icon</span>
+                        </header>
+                        The tray icon menu gives you quick access to your Pulumi
+                        accounts and the environments you've created so you can
+                        switch between them easily while working with multiple
+                        projects.
+                    </article>
                 </div>
             </section>
         </main>

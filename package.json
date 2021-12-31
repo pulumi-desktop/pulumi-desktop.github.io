@@ -8,7 +8,9 @@
     },
     "devDependencies": {
         "@parcel/transformer-sass": "^2.0.1",
-        "parcel": "latest"
+        "@parcel/transformer-typescript-tsc": "^2.0.1",
+        "parcel": "latest",
+        "typescript": "^4.5.4"
     },
     "dependencies": {
         "@picocss/pico": "^1.4.2"
