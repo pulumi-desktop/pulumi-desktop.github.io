@@ -62,3 +62,5 @@ if (!window.fetch) {
             console.error("Failed to fetch the latest version", err)
         );
 }
+
+export {};
