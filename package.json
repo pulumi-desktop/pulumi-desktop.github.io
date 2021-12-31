@@ -8,7 +8,6 @@
     },
     "devDependencies": {
         "@parcel/transformer-sass": "^2.0.1",
-        "@parcel/transformer-typescript-tsc": "^2.0.1",
         "parcel": "latest",
         "typescript": "^4.5.4"
     },
