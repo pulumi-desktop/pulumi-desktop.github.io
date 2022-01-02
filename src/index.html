@@ -58,9 +58,6 @@
         </nav>
         <header class="container">
             <!--[if IE]><h1>Internet Explorer is not supported!</h1><![endif]-->
-            <p>
-                <img src="./assets/images/avatar-on-white.svg" alt="Pulumi Desktop" style="width: 64px; height: 64px" />
-            </p>
             <h1>Pulumi Desktop</h1>
             <p>
                 Focus on what matters instead of remembering everything about your Pulumi projects. Whether you are new
@@ -85,12 +82,14 @@
                     Add your Pulumi projects to the workspace and access everything about them quickly and easily,
                     without having to juggle terminal tabs and running several commands.
                 </p>
-                <img src="../screenshots/dark/projects.png" alt="Projects" />
+                <img class="screenshot dark" src="../screenshots/dark/projects.png" alt="Projects" />
+                <img class="screenshot light" src="../screenshots/light/projects.png" alt="Projects" />
             </section>
             <section class="features">
                 <div class="grid">
                     <div>
-                        <img src="../screenshots/dark/plugins.png" alt="Plugins" />
+                        <img class="screenshot dark" src="../screenshots/dark/plugins.png" alt="Plugins" />
+                        <img class="screenshot light" src="../screenshots/light/plugins.png" alt="Plugins" />
                     </div>
                     <div>
                         <h2>Manage Plugins</h2>
@@ -111,14 +110,24 @@
                         </p>
                     </div>
                     <div>
-                        <img src="../screenshots/dark/environments.png" alt="Plugins" />
+                        <img class="screenshot dark" src="../screenshots/dark/environments.png" alt="Environments" />
+                        <img class="screenshot light" src="../screenshots/light/environments.png" alt="Environments" />
                     </div>
                 </div>
             </section>
             <section>
                 <div class="grid">
                     <div>
-                        <img src="../screenshots/dark/account-switcher.png" alt="Plugins" />
+                        <img
+                            class="screenshot dark"
+                            src="../screenshots/dark/account-switcher.png"
+                            alt="Account Switcher"
+                        />
+                        <img
+                            class="screenshot light"
+                            src="../screenshots/light/account-switcher.png"
+                            alt="Account Switcher"
+                        />
                     </div>
                     <div>
                         <h2>Switch Accounts</h2>
@@ -200,8 +209,14 @@
             </section>
         </main>
         <hr />
-        <footer>
-            <div class="container footnote">Made with ❤️ under a cloudy sky</div>
+        <footer class="container">
+            <div class="grid">
+                <p>
+                    Disclaimer: Pulumi Desktop is neither an official product of, nor an endorsement by
+                    <a href="https://pulumi.com" class="contrast">Pulumi</a>.
+                </p>
+                <div class="footnote">Made with ❤️ under a cloudy sky</div>
+            </div>
         </footer>
     </body>
 </html>

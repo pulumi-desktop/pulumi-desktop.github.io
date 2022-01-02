@@ -5,19 +5,53 @@
     --font-size: 16px;
 }
 
+@mixin img-switcher {
+    &.light {
+        display: initial;
+    }
+
+    @media only screen and (prefers-color-scheme: dark) {
+        &.dark {
+            display: initial;
+        }
+        &.light {
+            display: none;
+        }
+    }
+}
+
 body {
     > header,
     > section {
         --block-spacing-vertical: 1rem;
     }
-}
 
-header {
-    text-align: center;
-}
+    header {
+        text-align: center;
 
-footer {
-    .footnote {
-        text-align: right;
+        .logo {
+            width: 64px;
+            height: 64px;
+        }
+    }
+
+    .logo {
+        display: none;
+        width: 32px;
+        height: 32px;
+
+        @include img-switcher();
+    }
+
+    .screenshot {
+        display: none;
+
+        @include img-switcher();
+    }
+
+    footer {
+        .footnote {
+            text-align: right;
+        }
     }
 }
