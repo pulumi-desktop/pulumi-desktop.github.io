@@ -30,17 +30,13 @@ body {
         text-align: center;
 
         .logo {
-            width: 64px;
-            height: 64px;
+            width: 128px;
         }
     }
 
     .logo {
-        display: none;
         width: 32px;
-        height: 32px;
-
-        @include img-switcher();
+        height: auto;
     }
 
     .screenshot {
