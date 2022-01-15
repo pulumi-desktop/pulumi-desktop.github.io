@@ -9,9 +9,9 @@
     },
     "devDependencies": {
         "@parcel/transformer-sass": "^2.2.0",
-        "@playwright/test": "^1.17.1",
-        "parcel": "latest",
-        "playwright": "^1.17.1",
+        "@playwright/test": "^1.17.2",
+        "parcel": "^2.2.0",
+        "playwright": "^1.17.2",
         "posthtml": "^0.16.5",
         "posthtml-include": "^1.7.2",
         "typescript": "^4.5.4"
