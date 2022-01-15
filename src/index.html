@@ -18,8 +18,25 @@
     </head>
     <body>
         <nav class="container">
+            <!--Empty element to spread out items.-->
             <ul></ul>
             <ul>
+                <li>
+                    <fieldset>
+                        <label for="switch">
+                            ☀️
+                            <input
+                                type="checkbox"
+                                class="theme-switcher"
+                                name="switch"
+                                role="switch"
+                                aria-checked="false"
+                                onclick="onClickThemeChange()"
+                            />
+                            🌑
+                        </label>
+                    </fieldset>
+                </li>
                 <li>
                     <a href="https://github.com/pulumi-desktop/app/discussions" class="contrast">
                         <svg

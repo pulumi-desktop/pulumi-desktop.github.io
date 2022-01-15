@@ -1,3 +1,5 @@
+import themeSwitcher from "./themeSwitcher";
+
 interface ReleaseAsset {
     created_at: string;
     updated_at: string;
@@ -15,10 +17,17 @@ let latestRelease: GitHubRelease | undefined;
 
 async function getLatestVersion() {
     const resp = await fetch("https://api.github.com/repos/pulumi-desktop/app/releases/latest");
+    if (resp.status !== 200) {
+        throw new Error(`response does not indicate a success: ${resp.statusText}`);
+    }
     latestRelease = await resp.json();
 }
 
 function enableDownloadButtons() {
+    if (!latestRelease) {
+        return;
+    }
+
     const buttons = document.getElementsByClassName("download-btn");
     for (let i = 0; i < buttons.length; i++) {
         const btn = buttons[i] as HTMLAnchorElement;
@@ -50,5 +59,7 @@ if (!window.fetch) {
         .then(() => enableDownloadButtons())
         .catch((err: any) => console.error("Failed to fetch the latest version", err));
 }
+
+themeSwitcher.init();
 
 export {};

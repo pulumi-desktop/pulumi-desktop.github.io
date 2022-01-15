@@ -3,20 +3,21 @@
 :root {
     --font-family: "Inter", sans-serif;
     --font-size: 16px;
+
+    --show-dark-screenshot: none;
+    --show-light-screenshot: none;
 }
 
-@mixin img-switcher {
-    &.light {
-        display: initial;
-    }
+:root:not([data-theme="dark"]),
+[data-theme="light"] {
+    --show-light-screenshot: initial;
+    --show-dark-screenshot: none;
+}
 
-    @media only screen and (prefers-color-scheme: dark) {
-        &.dark {
-            display: initial;
-        }
-        &.light {
-            display: none;
-        }
+@media only screen and (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --show-dark-screenshot: initial;
+        --show-light-screenshot: none;
     }
 }
 
@@ -24,6 +25,15 @@ body {
     > header,
     > section {
         --block-spacing-vertical: 1rem;
+    }
+
+    nav {
+        li {
+            fieldset {
+                position: relative;
+                top: 2px;
+            }
+        }
     }
 
     header {
@@ -42,7 +52,12 @@ body {
     .screenshot {
         display: none;
 
-        @include img-switcher();
+        &.dark {
+            display: var(--show-dark-screenshot);
+        }
+        &.light {
+            display: var(--show-light-screenshot);
+        }
     }
 
     footer {
