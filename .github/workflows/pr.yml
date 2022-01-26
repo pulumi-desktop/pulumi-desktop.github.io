@@ -1,6 +1,7 @@
 on:
   pull_request:
     paths:
+      - .github/workflows/pr.yml
       - src/**/*
       - test/**/*
 
