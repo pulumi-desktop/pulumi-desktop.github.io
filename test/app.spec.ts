@@ -16,7 +16,7 @@ test("download buttons are enabled", async ({ page }) => {
         await expect(btn).toBeEnabled();
         const link = await btn.getAttribute("href");
         expect(link).toMatch(
-            /(https:\/\/github\.com\/pulumi-desktop\/app\/releases\/download\/)(v[0-9]+\.[0-9]+\.[0-9]+\/)(.*)(\.snap|dmg|exe)/g
+            /(https:\/\/github\.com\/deskypus\/app\/releases\/download\/)(v[0-9]+\.[0-9]+\.[0-9]+\/)(.*)(\.snap|dmg|exe)/g
         );
     }
 });

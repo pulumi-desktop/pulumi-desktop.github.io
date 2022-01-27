@@ -20,6 +20,11 @@ jobs:
         with:
           node-version: "16.x"
 
+      - name: Restore deps and test
+        run: |
+          npm ci
+          npm test
+
       - uses: sterlingwes/gh-pages-deploy-action@v1.1
         with:
           access-token: ${{ secrets.GH_PAT }}
