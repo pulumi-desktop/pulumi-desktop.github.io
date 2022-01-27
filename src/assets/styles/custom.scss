@@ -14,6 +14,12 @@
     --show-dark-screenshot: none;
 }
 
+// If dark mode is forced but isn't the default system theme.
+[data-theme="dark"] {
+    --show-dark-screenshot: initial;
+    --show-light-screenshot: none;
+}
+
 @media only screen and (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
         --show-dark-screenshot: initial;
