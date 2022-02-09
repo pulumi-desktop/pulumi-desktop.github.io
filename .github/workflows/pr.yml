@@ -4,6 +4,9 @@ on:
       - .github/workflows/pr.yml
       - src/**/*
       - test/**/*
+      - playwright.config.ts
+      - package.json
+      - package-lock.json
 
 jobs:
   test:
