@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="./assets/styles/custom.scss" />
 <script type="text/javascript">
     (function (c, l, a, r, i, t, y) {
+        if (c.location.host.startsWith("localhost")) return;
         c[a] =
             c[a] ||
             function () {
