@@ -9,7 +9,7 @@
     },
     "devDependencies": {
         "@parcel/transformer-sass": "2.3.2",
-        "@playwright/test": "1.19.1",
+        "@playwright/test": "1.19.2",
         "parcel": "2.3.2",
         "playwright": "1.19.1",
         "posthtml": "0.16.5",
