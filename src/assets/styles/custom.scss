@@ -66,6 +66,14 @@ body {
         }
     }
 
+    .sm-hidden {
+        display: none;
+
+        @media (min-width: map-get($breakpoints, "sm")) {
+            display: inherit;
+        }
+    }
+
     footer {
         .footnote {
             text-align: right;
