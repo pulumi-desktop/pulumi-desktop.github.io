@@ -8,10 +8,20 @@ interface ReleaseAsset {
 }
 
 interface GitHubRelease {
+    /**
+     * The name of the release when the release was published.
+     */
+    name: string;
     url: string;
     tag_name: string;
     assets: ReleaseAsset[];
 }
+
+const osLookup = {
+    linux: "Linux",
+    darwin: "macOS",
+    windows: "Windows",
+};
 
 let latestRelease: GitHubRelease | undefined;
 
@@ -43,10 +53,13 @@ function enableDownloadButtons() {
             case "windows":
                 releaseAsset = latestRelease.assets.find((a) => a.name.includes("exe"));
                 break;
+            default:
+                throw new Error(`Unknown OS type ${os}`);
         }
 
         if (releaseAsset) {
             btn.href = releaseAsset.browser_download_url;
+            btn.text = `Download ${latestRelease.tag_name} for ${osLookup[os]}`;
             btn.removeAttribute("disabled");
         }
     }
