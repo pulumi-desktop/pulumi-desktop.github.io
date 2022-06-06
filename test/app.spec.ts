@@ -12,7 +12,7 @@ test("download buttons are enabled", async ({ page }) => {
     for (let i = 0; i < platforms.length; i++) {
         const p = platforms[i];
         const btn = page.locator(`[data-test=${p}]`);
-        await expect(btn).toContainText("Download for");
+        await expect(btn).toContainText(/Download v(.*) for (Linux|macOS|Windows)/g);
         await expect(btn).toBeEnabled();
         const link = await btn.getAttribute("href");
         expect(link).toMatch(
