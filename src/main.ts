@@ -42,13 +42,18 @@ function enableDownloadButtons() {
     for (let i = 0; i < buttons.length; i++) {
         const btn = buttons[i] as HTMLAnchorElement;
         const os = btn.dataset.os;
+        const arch = btn.dataset.arch;
         let releaseAsset: ReleaseAsset | undefined;
         switch (os) {
             case "linux":
                 releaseAsset = latestRelease.assets.find((a) => a.name.includes("snap"));
                 break;
             case "darwin":
-                releaseAsset = latestRelease.assets.find((a) => a.name.includes("dmg"));
+                if (arch) {
+                    releaseAsset = latestRelease.assets.find((a) => a.name.includes(arch) && a.name.includes("dmg"));
+                } else {
+                    releaseAsset = latestRelease.assets.find((a) => a.name.includes("dmg"));
+                }
                 break;
             case "windows":
                 releaseAsset = latestRelease.assets.find((a) => a.name.includes("exe"));
@@ -59,7 +64,13 @@ function enableDownloadButtons() {
 
         if (releaseAsset) {
             btn.href = releaseAsset.browser_download_url;
-            btn.text = `Download ${latestRelease.tag_name} for ${osLookup[os]}`;
+            let text = `Download ${latestRelease.tag_name} for ${osLookup[os]} `;
+            if (arch) {
+                text += `${arch}`;
+            } else {
+                text += "x64";
+            }
+            btn.text = text;
             btn.removeAttribute("disabled");
         }
     }

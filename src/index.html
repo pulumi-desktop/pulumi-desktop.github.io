@@ -21,13 +21,41 @@
             </p>
             <div class="grid">
                 <a role="button" href="#" class="download-btn" disabled data-os="linux" data-test="linux_x64">
-                    Download for Linux (64bit)
+                    Download for Linux
                 </a>
-                <a role="button" href="#" class="download-btn" disabled data-os="darwin" data-test="darwin_x64">
-                    Download for macOS (64bit)
-                </a>
+                <details role="list">
+                    <summary aria-haspopup="listbox" role="button">Select macOS version (Intel/Apple Silicon)</summary>
+                    <ul role="listbox">
+                        <li>
+                            <a
+                                role="button"
+                                href="#"
+                                class="download-btn"
+                                disabled
+                                data-arch="x64"
+                                data-os="darwin"
+                                data-test="darwin_x64"
+                            >
+                                Download for x64
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                role="button"
+                                href="#"
+                                class="download-btn"
+                                disabled
+                                data-arch="arm64"
+                                data-os="darwin"
+                                data-test="darwin_arm64"
+                            >
+                                Download for arm64
+                            </a>
+                        </li>
+                    </ul>
+                </details>
                 <a role="button" href="#" class="download-btn" disabled data-os="windows" data-test="windows_x64">
-                    Download for Windows (64bit)
+                    Download for Windows
                 </a>
             </div>
             <p>By downloading, you agree to the <a href="eula.html" class="contrast">EULA</a>.</p>
