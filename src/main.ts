@@ -52,7 +52,10 @@ function enableDownloadButtons() {
                 if (arch) {
                     releaseAsset = latestRelease.assets.find((a) => a.name.includes(arch) && a.name.includes("dmg"));
                 } else {
-                    releaseAsset = latestRelease.assets.find((a) => a.name.includes("dmg"));
+                    // TODO: Temporary hack until all release assets have the architecture in their names.
+                    releaseAsset = latestRelease.assets.find(
+                        (a) => !a.name.includes("arm64") && a.name.includes("dmg")
+                    );
                 }
                 break;
             case "windows":
@@ -64,14 +67,19 @@ function enableDownloadButtons() {
 
         if (releaseAsset) {
             btn.href = releaseAsset.browser_download_url;
-            let text = `Download ${latestRelease.tag_name} for ${osLookup[os]} `;
-            if (arch) {
-                text += `${arch}`;
-            } else {
-                text += "x64";
-            }
-            btn.text = text;
             btn.removeAttribute("disabled");
+            const versionTooltip = `Version ${latestRelease.tag_name}`;
+            const versionTooltipClassName = "version-tooltip-target";
+            if (btn.classList.contains(versionTooltipClassName)) {
+                btn.dataset.tooltip = versionTooltip;
+            } else {
+                const el = document.querySelector(`.${os}.${versionTooltipClassName}`) as HTMLElement;
+                if (!el) {
+                    console.warn("Did not find a target el for the version tooltip");
+                    return;
+                }
+                el.dataset.tooltip = versionTooltip;
+            }
         }
     }
 }

@@ -20,28 +20,26 @@
                 to Pulumi or a seasoned user, Deskypus aims to simplify your development workflow.
             </p>
             <div class="grid">
-                <a role="button" href="#" class="download-btn" disabled data-os="linux" data-test="linux_x64">
+                <a
+                    role="button"
+                    href="#"
+                    class="download-btn version-tooltip-target"
+                    disabled
+                    data-os="linux"
+                    data-test="linux_x64"
+                >
                     Download for Linux
                 </a>
-                <details role="list">
-                    <summary aria-haspopup="listbox" role="button">Select macOS version (Intel/Apple Silicon)</summary>
+                <details role="list" style="margin-bottom: 0" class="darwin version-tooltip-target">
+                    <summary aria-haspopup="listbox" role="button">Download for macOS</summary>
                     <ul role="listbox">
                         <li>
-                            <a
-                                role="button"
-                                href="#"
-                                class="download-btn"
-                                disabled
-                                data-arch="x64"
-                                data-os="darwin"
-                                data-test="darwin_x64"
-                            >
-                                Download for x64
+                            <a href="#" class="download-btn" disabled data-os="darwin" data-test="darwin_x64">
+                                Intel (x64)
                             </a>
                         </li>
                         <li>
                             <a
-                                role="button"
                                 href="#"
                                 class="download-btn"
                                 disabled
@@ -49,12 +47,19 @@
                                 data-os="darwin"
                                 data-test="darwin_arm64"
                             >
-                                Download for arm64
+                                Apple (arm64)
                             </a>
                         </li>
                     </ul>
                 </details>
-                <a role="button" href="#" class="download-btn" disabled data-os="windows" data-test="windows_x64">
+                <a
+                    role="button"
+                    href="#"
+                    class="download-btn version-tooltip-target"
+                    disabled
+                    data-os="windows"
+                    data-test="windows_x64"
+                >
                     Download for Windows
                 </a>
             </div>
