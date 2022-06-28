@@ -42,13 +42,21 @@ function enableDownloadButtons() {
     for (let i = 0; i < buttons.length; i++) {
         const btn = buttons[i] as HTMLAnchorElement;
         const os = btn.dataset.os;
+        const arch = btn.dataset.arch;
         let releaseAsset: ReleaseAsset | undefined;
         switch (os) {
             case "linux":
                 releaseAsset = latestRelease.assets.find((a) => a.name.includes("snap"));
                 break;
             case "darwin":
-                releaseAsset = latestRelease.assets.find((a) => a.name.includes("dmg"));
+                if (arch) {
+                    releaseAsset = latestRelease.assets.find((a) => a.name.includes(arch) && a.name.includes("dmg"));
+                } else {
+                    // TODO: Temporary hack until all release assets have the architecture in their names.
+                    releaseAsset = latestRelease.assets.find(
+                        (a) => !a.name.includes("arm64") && a.name.includes("dmg")
+                    );
+                }
                 break;
             case "windows":
                 releaseAsset = latestRelease.assets.find((a) => a.name.includes("exe"));
@@ -59,8 +67,19 @@ function enableDownloadButtons() {
 
         if (releaseAsset) {
             btn.href = releaseAsset.browser_download_url;
-            btn.text = `Download ${latestRelease.tag_name} for ${osLookup[os]}`;
             btn.removeAttribute("disabled");
+            const versionTooltip = `Version ${latestRelease.tag_name}`;
+            const versionTooltipClassName = "version-tooltip-target";
+            if (btn.classList.contains(versionTooltipClassName)) {
+                btn.dataset.tooltip = versionTooltip;
+            } else {
+                const el = document.querySelector(`.${os}.${versionTooltipClassName}`) as HTMLElement;
+                if (!el) {
+                    console.warn("Did not find a target el for the version tooltip");
+                    return;
+                }
+                el.dataset.tooltip = versionTooltip;
+            }
         }
     }
 }

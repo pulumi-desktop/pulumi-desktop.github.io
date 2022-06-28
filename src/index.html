@@ -20,14 +20,47 @@
                 to Pulumi or a seasoned user, Deskypus aims to simplify your development workflow.
             </p>
             <div class="grid">
-                <a role="button" href="#" class="download-btn" disabled data-os="linux" data-test="linux_x64">
-                    Download for Linux (64bit)
+                <a
+                    role="button"
+                    href="#"
+                    class="download-btn version-tooltip-target"
+                    disabled
+                    data-os="linux"
+                    data-test="linux_x64"
+                >
+                    Download for Linux
                 </a>
-                <a role="button" href="#" class="download-btn" disabled data-os="darwin" data-test="darwin_x64">
-                    Download for macOS (64bit)
-                </a>
-                <a role="button" href="#" class="download-btn" disabled data-os="windows" data-test="windows_x64">
-                    Download for Windows (64bit)
+                <details role="list" style="margin-bottom: 0" class="darwin version-tooltip-target">
+                    <summary aria-haspopup="listbox" role="button">Download for macOS</summary>
+                    <ul role="listbox">
+                        <li>
+                            <a href="#" class="download-btn" disabled data-os="darwin" data-test="darwin_x64">
+                                Intel (x64)
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="download-btn"
+                                disabled
+                                data-arch="arm64"
+                                data-os="darwin"
+                                data-test="darwin_arm64"
+                            >
+                                Apple (arm64)
+                            </a>
+                        </li>
+                    </ul>
+                </details>
+                <a
+                    role="button"
+                    href="#"
+                    class="download-btn version-tooltip-target"
+                    disabled
+                    data-os="windows"
+                    data-test="windows_x64"
+                >
+                    Download for Windows
                 </a>
             </div>
             <p>By downloading, you agree to the <a href="eula.html" class="contrast">EULA</a>.</p>
