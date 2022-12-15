@@ -8,9 +8,9 @@
         "test": "playwright test"
     },
     "devDependencies": {
-        "@parcel/transformer-sass": "2.8.1",
+        "@parcel/transformer-sass": "2.8.2",
         "@playwright/test": "1.28.1",
-        "parcel": "2.8.1",
+        "parcel": "2.8.2",
         "playwright": "1.28.1",
         "posthtml": "0.16.6",
         "posthtml-include": "1.7.4",
