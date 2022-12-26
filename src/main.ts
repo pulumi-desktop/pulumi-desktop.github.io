@@ -46,20 +46,20 @@ function enableDownloadButtons() {
         let releaseAsset: ReleaseAsset | undefined;
         switch (os) {
             case "linux":
-                releaseAsset = latestRelease.assets.find((a) => a.name.includes("snap"));
+                releaseAsset = latestRelease.assets.find((a) => a.name.endsWith("tar.gz"));
                 break;
             case "darwin":
                 if (arch) {
-                    releaseAsset = latestRelease.assets.find((a) => a.name.includes(arch) && a.name.includes("dmg"));
+                    releaseAsset = latestRelease.assets.find((a) => a.name.includes(arch) && a.name.endsWith("dmg"));
                 } else {
                     // TODO: Temporary hack until all release assets have the architecture in their names.
                     releaseAsset = latestRelease.assets.find(
-                        (a) => !a.name.includes("arm64") && a.name.includes("dmg")
+                        (a) => !a.name.includes("arm64") && a.name.endsWith("dmg")
                     );
                 }
                 break;
             case "windows":
-                releaseAsset = latestRelease.assets.find((a) => a.name.includes("exe"));
+                releaseAsset = latestRelease.assets.find((a) => a.name.endsWith("exe"));
                 break;
             default:
                 throw new Error(`Unknown OS type ${os}`);
