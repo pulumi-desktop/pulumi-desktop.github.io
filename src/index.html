@@ -20,16 +20,27 @@
                 to Pulumi or a seasoned user, Deskypus aims to simplify your development workflow.
             </p>
             <div class="grid">
-                <a
-                    role="button"
-                    href="#"
-                    class="download-btn version-tooltip-target"
-                    disabled
-                    data-os="linux"
-                    data-test="linux_x64"
-                >
-                    Download for Linux
-                </a>
+                <details role="list" style="margin-bottom: 0" class="linux version-tooltip-target">
+                    <summary aria-haspopup="listbox" role="button">Download for Linux</summary>
+                    <ul role="listbox" style="padding-left: 0">
+                        <li>
+                            <a href="https://snapcraft.io/deskypus" target="_blank" rel="noopener">
+                                Install from Snapcraft Store
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="download-btn"
+                                disabled
+                                data-os="linux"
+                                data-test="linux_x64"
+                            >
+                                Download .tar.gz file
+                            </a>
+                        </li>
+                    </ul>
+                </details>
                 <details role="list" style="margin-bottom: 0" class="darwin version-tooltip-target">
                     <summary aria-haspopup="listbox" role="button">Download for macOS</summary>
                     <ul role="listbox" style="padding-left: 0">

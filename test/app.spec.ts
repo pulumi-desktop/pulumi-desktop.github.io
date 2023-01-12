@@ -15,7 +15,7 @@ test("download buttons are enabled", async ({ page }) => {
         await expect(btn).toBeEnabled();
         const link = await btn.getAttribute("href");
         expect(link).toMatch(
-            /(https:\/\/github\.com\/deskypus\/app\/releases\/download\/)(v[0-9]+\.[0-9]+\.[0-9]+\/)(.*)(-arm64)?(\.snap|dmg|exe)/g
+            /(https:\/\/github\.com\/deskypus\/app\/releases\/download\/)(v[0-9]+\.[0-9]+\.[0-9]+\/)(.*)(-arm64)?(\.snap|.tar.gz|dmg|exe)/g
         );
     }
 });
