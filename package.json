@@ -4,7 +4,7 @@
     "browserslist": "> 0.5%, last 2 versions, not dead",
     "scripts": {
         "start": "parcel src/index.html",
-        "build": "parcel build src/index.html --dist-dir docs && cp google28f7fffa1230bbbb.html docs/",
+        "build": "parcel build src/index.html --dist-dir docs",
         "test": "playwright test"
     },
     "devDependencies": {
