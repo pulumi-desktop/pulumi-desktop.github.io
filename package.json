@@ -17,6 +17,6 @@
         "typescript": "5.3.3"
     },
     "dependencies": {
-        "@picocss/pico": "1.5.10"
+        "@picocss/pico": "1.5.11"
     }
 }
