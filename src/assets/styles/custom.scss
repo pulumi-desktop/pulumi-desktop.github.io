@@ -64,6 +64,10 @@ body {
         &.light {
             display: var(--show-light-screenshot);
         }
+
+        &.always {
+            display: initial;
+        }
     }
 
     .sm-hidden {
