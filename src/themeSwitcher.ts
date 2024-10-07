@@ -63,7 +63,7 @@ export const themeSwitcher = {
 
     // Apply scheme
     applyScheme() {
-        document.querySelector("html").setAttribute("data-theme", this.scheme);
+        document.querySelector("html")?.setAttribute("data-theme", this.scheme);
     },
 };
 
