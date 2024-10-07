@@ -71,7 +71,7 @@
             <p>By downloading, you agree to the <a href="eula.html" class="contrast">EULA</a>.</p>
         </header>
         <main class="container">
-            <section>
+            <section id="features">
                 <h2>Features</h2>
                 <p>
                     Add your Pulumi projects to the workspace and access everything about them quickly and easily,
@@ -87,7 +87,7 @@
                         <img class="screenshot light" src="../screenshots/light/plugins.png" alt="Plugins" />
                     </div>
                     <div>
-                        <h2>Manage Plugins</h2>
+                        <h3>Manage Plugins</h3>
                         <p>
                             Keep track of the space used by plugins on your machine. Get notified when the space used by
                             the plugins cache crosses a threshold. Take back what's yours.
@@ -98,7 +98,7 @@
             <section>
                 <div class="grid">
                     <div>
-                        <h2>Environments</h2>
+                        <h3>Environments</h3>
                         <p>
                             Create environments each with their own environment variables so you can seamlessly switch
                             between environments with the variables automatically initialized in your default shell.
@@ -125,7 +125,7 @@
                         />
                     </div>
                     <div>
-                        <h2>Switch Accounts</h2>
+                        <h3>Switch Accounts</h3>
                         <p>
                             Use multiple self-managed backends? Switch accounts quickly and explore the stacks in
                             multiple projects easily.
@@ -202,45 +202,51 @@
                     </article>
                 </div>
             </section>
-            <section>
+            <section id="pro">
                 <h2>PRO Features</h2>
                 <p>
                     PRO features are available with a license key. You can get a license key by [contacting
                     us](https://cloudysky.software/contact). Get a no-obligation FREE trial license key for your entire
                     team and for unlimited machines.
                 </p>
-                <div class="grid">
-                    <div>
-                        <img
-                            src="../screenshots/3d-resource-graph.png"
-                            class="screenshot always"
-                            alt="3D Resource Graph"
-                        />
+                <section>
+                    <div class="grid">
+                        <div>
+                            <img
+                                src="../screenshots/3d-resource-graph.png"
+                                class="screenshot always"
+                                alt="3D Resource Graph"
+                            />
+                        </div>
+                        <div>
+                            <h3>3D Resource Graph</h3>
+                            <p>
+                                Explore your stack's resource graph in 3d with trajectory-highlighting and fly controls.
+                            </p>
+                        </div>
                     </div>
-                    <div>
-                        <h2>3D Resource Graph</h2>
-                        <p>Explore your stack's resource graph in 3d with trajectory-highlighting and fly controls.</p>
+                </section>
+                <section>
+                    <div class="grid">
+                        <div>
+                            <h3>Resource Dependencies Graph</h3>
+                            <p>
+                                Visualize the dependencies for a resource to identify what might be preventing it from
+                                being created in-parallel. Identify and remove redundant dependencies to speed-up your
+                                stack's deployment.
+                            </p>
+                        </div>
+                        <div>
+                            <img
+                                src="../screenshots/resource-deps-graph.png"
+                                class="screenshot always"
+                                alt="Resource Depdendencies Graph"
+                            />
+                        </div>
                     </div>
-                </div>
-                <div class="grid">
-                    <div>
-                        <h2>Resource Dependencies Graph</h2>
-                        <p>
-                            Visualize the dependencies for a resource to identify what might be preventing it from being
-                            created in-parallel. Identify and remove redundant dependencies to speed-up your stack's
-                            deployment.
-                        </p>
-                    </div>
-                    <div>
-                        <img
-                            src="../screenshots/resource-deps-graph.png"
-                            class="screenshot always"
-                            alt="Resource Depdendencies Graph"
-                        />
-                    </div>
-                </div>
+                </section>
             </section>
-            <section>
+            <section id="deeplink">
                 <h2>Deeplink</h2>
                 <p>
                     <a href="https://github.com/deskypus/deeplink" title="Deeplink">Deeplink</a> is a browser extension
